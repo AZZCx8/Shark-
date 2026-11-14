@@ -30,8 +30,8 @@ jobs:
       - name: Build web app
         working-directory: app
         run: |
-          npm install
-          npm install @capacitor/cli@^8 @capacitor/android@^8
+          npm install --legacy-peer-deps
+          npm install --legacy-peer-deps @capacitor/cli@^8 @capacitor/android@^8
           npm run build
           npx cap sync android
           sed -i "s/gradle:8.7.2/gradle:8.13.0/" android/build.gradle
